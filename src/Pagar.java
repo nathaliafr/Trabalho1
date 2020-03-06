@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class Pagar {
 
-    //declaração das variáveis globais
     double valor;
     double troco;
     double valorRecebido;
