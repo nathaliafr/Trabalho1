@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class Pagar {
 
-    double valor;
-    double troco;
-    double valorRecebido;
-    double valorTotal;
-    double valorPrcelado;
-    int parcela;
+    private double valor;
+    private double troco;
+    private double valorRecebido;
+    private double valorTotal;
+    private double valorPrcelado;
+    private int parcela;
 
     //neste método ao inserir o valor total do produto o sistema calcula o valor total e apresenta para o usuário
     public double somar(double valorTotal) {
@@ -38,7 +38,7 @@ public class Pagar {
         Scanner val = new Scanner(System.in);
         double valor = val.nextDouble();
         setValorRecebido(valor); //armazenando o valor recebido
-        troco = valorRecebido-pagar; //calculo do troco
+        troco = getValorRecebido()-pagar; //calculo do troco
         System.out.println("Troco R$" + troco);
         System.out.println("Pagamento realizado com sucesso");
         zerarCompra(); // o carrinho é zerado apos a finalização da compra
@@ -123,6 +123,8 @@ public class Pagar {
     //função utilizada para zerar o carrinho chamada apos cada pagamento
     public double zerarCompra(){
         valorTotal = 0;
+        valorRecebido=0;
+        setValorRecebido(valorRecebido);
         setValorTotal(valorTotal);
         return valorTotal;
     }
